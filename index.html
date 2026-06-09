@@ -1,10 +1,12 @@
 <!doctype html>
+
 <html lang="nl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Koop Wakker Waar?</title>
-  <meta name="description" content="Koop wakker waar. Bewust kopen versterkt elkaar.">
+  <title>Koop WakkerWaar</title>
+  <meta name="description" content="Verzwak het systeem. Versterk elkaar. Koop WakkerWaar.">
+
   <style>
     :root {
       --bg: #f7f3ea;
@@ -16,7 +18,9 @@
       --error: #9f2d20;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -24,7 +28,6 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.45;
-      overflow-wrap: break-word;
     }
 
     main {
@@ -46,30 +49,23 @@
     }
 
     .leader {
-      margin: 0 0 26px;
-      font-size: clamp(2.1rem, 6vw, 4.3rem);
+      margin: 0 0 40px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
       line-height: 0.95;
       letter-spacing: -0.055em;
       font-weight: 850;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 5.5vw, 3.9rem);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-    }
-
-    .lead {
-      font-size: clamp(1.2rem, 3vw, 1.65rem);
-      line-height: 1.22;
-      margin: 0 0 22px;
-      color: var(--text);
-      font-weight: 650;
+      margin: 0 0 24px;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 850;
     }
 
     .statement {
-      margin: 24px 0 30px;
+      margin: 0 0 36px;
       padding-left: 18px;
       border-left: 4px solid var(--accent);
       font-size: 1.25rem;
@@ -78,7 +74,6 @@
     }
 
     form {
-      margin-top: 0;
       display: grid;
       gap: 14px;
     }
@@ -87,28 +82,25 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin: 0 0 4px;
     }
 
     .option {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
+      min-height: 56px;
       border: 1px solid var(--border);
       border-radius: 999px;
       padding: 12px 16px;
       font-weight: 750;
-      color: var(--text);
       cursor: pointer;
-      background: #fff;
+      background: white;
       text-align: center;
     }
 
     .option input {
       position: absolute;
       opacity: 0;
-      pointer-events: none;
     }
 
     .option:has(input:checked) {
@@ -118,36 +110,24 @@
     }
 
     .mail-intro {
+      margin-top: 14px;
       font-size: 1rem;
       color: var(--muted);
-      margin: 8px 0 -2px;
     }
 
-    label.email-label {
+    .email-label {
       font-weight: 650;
       font-size: 0.95rem;
     }
 
-    input {
+    input[type="email"] {
       width: 100%;
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 13px 14px;
       font: inherit;
-      background: #fff;
+      background: white;
       color: var(--text);
-    }
-
-    .error-message {
-      display: none;
-      color: var(--error);
-      font-size: 0.9rem;
-      font-weight: 650;
-      margin: -4px 0 0;
-    }
-
-    .error-message.visible {
-      display: block;
     }
 
     button {
@@ -157,7 +137,7 @@
       padding: 15px 20px;
       font: inherit;
       font-weight: 750;
-      color: #fff;
+      color: white;
       background: var(--accent);
       cursor: pointer;
     }
@@ -166,85 +146,102 @@
       filter: brightness(0.95);
     }
 
+    .error-message {
+      display: none;
+      color: var(--error);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .error-message.visible {
+      display: block;
+    }
+
     .hidden-field {
       display: none;
     }
 
     @media (max-width: 560px) {
       .page {
-        padding: 30px 20px;
-        border-radius: 18px;
+        padding: 28px 20px;
       }
 
       .options {
         grid-template-columns: 1fr;
       }
-
-      .leader {
-        margin-bottom: 22px;
-      }
     }
   </style>
+
 </head>
+
 <body>
   <main>
     <section class="page">
-      <div class="leader">
-        Verzwak het systeem.<br>
-        Versterk elkaar.
-      </div>
 
-      <h1>Koop Wakker Waar?</h1>
+```
+  <div class="leader">
+    Verzwak het systeem.<br>
+    Versterk elkaar.
+  </div>
 
-      <p class="lead">Bewust kopen versterkt elkaar.</p>
+  <h1>Koop WakkerWaar</h1>
 
-      <div class="statement">
-        Van bewustwording naar actie.
-      </div>
+  <div class="statement">
+    Van bewustwording naar actie.
+  </div>
 
-      <form id="kww-form" action="https://formspree.io/f/mbdegloa" method="POST">
-        <div class="options" aria-label="Interesse">
-          <label class="option">
-            <input type="checkbox" name="interesse" value="Ik zoek aanbieders">
-            Ik zoek aanbieders
-          </label>
+  <form id="kww-form" action="https://formspree.io/f/mbdegloa" method="POST">
 
-          <label class="option">
-            <input type="checkbox" name="interesse" value="Ik ben aanbieder">
-            Ik ben aanbieder
-          </label>
-        </div>
+    <div class="options">
+      <label class="option">
+        <input type="checkbox" name="interesse" value="Ik zoek aanbieders">
+        Ik zoek aanbieders
+      </label>
 
-        <p id="interest-error" class="error-message">Kies minimaal één optie.</p>
+      <label class="option">
+        <input type="checkbox" name="interesse" value="Ik ben aanbieder">
+        Ik ben aanbieder
+      </label>
+    </div>
 
-        <p class="mail-intro">Laat je mail achter en ontvang de eerste lijst zodra die klaar is.</p>
+    <p id="interest-error" class="error-message">
+      Kies minimaal één optie.
+    </p>
 
-        <div>
-          <label class="email-label" for="email">E-mailadres</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="jij@example.nl"
-            maxlength="120"
-            autocomplete="email"
-            required>
-        </div>
+    <p class="mail-intro">
+      Laat je mail achter en ontvang de eerste lijst zodra die klaar is.
+    </p>
 
-        <div class="hidden-field">
-          <label>
-            Laat dit veld leeg
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-          </label>
-        </div>
+    <div>
+      <label class="email-label" for="email">E-mailadres</label>
 
-        <input type="hidden" name="_subject" value="Nieuwe aanmelding via Koop Wakker Waar">
-        <input type="hidden" name="_language" value="nl">
-        <input type="hidden" name="_next" value="https://koopwakkerwaar.nl/thanks.html">
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="jij@example.nl"
+        maxlength="120"
+        autocomplete="email"
+        required>
+    </div>
 
-        <button type="submit">Houd mij op de hoogte</button>
-      </form>
-    </section>
+    <div class="hidden-field">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+    </div>
+
+    <input type="hidden" name="_subject" value="Nieuwe aanmelding via Koop WakkerWaar">
+    <input type="hidden" name="_language" value="nl">
+    <input type="hidden" name="_next" value="https://koopwakkerwaar.nl/thanks.html">
+
+    <button type="submit">
+      Houd mij op de hoogte
+    </button>
+
+  </form>
+
+</section>
+```
+
   </main>
 
   <script>
@@ -252,23 +249,18 @@
     const checkboxes = document.querySelectorAll('input[name="interesse"]');
     const error = document.getElementById('interest-error');
 
-    form.addEventListener('submit', function (event) {
-      const hasInterest = Array.from(checkboxes).some(function (checkbox) {
-        return checkbox.checked;
-      });
+    form.addEventListener('submit', function(event) {
+      const hasInterest = Array.from(checkboxes).some(cb => cb.checked);
 
       if (!hasInterest) {
         event.preventDefault();
         error.classList.add('visible');
-        checkboxes[0].focus();
       }
     });
 
-    checkboxes.forEach(function (checkbox) {
-      checkbox.addEventListener('change', function () {
-        const hasInterest = Array.from(checkboxes).some(function (item) {
-          return item.checked;
-        });
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        const hasInterest = Array.from(checkboxes).some(cb => cb.checked);
 
         if (hasInterest) {
           error.classList.remove('visible');
@@ -276,5 +268,6 @@
       });
     });
   </script>
+
 </body>
 </html>
