@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koop WakkerWaar</title>
+  <meta name="description" content="Van bewustwording naar actie. Verzwak het systeem. Versterk elkaar. Koop WakkerWaar.">
+
+  <style>
+    :root {
+      --bg: #f7f3ea;
+      --text: #1f1f1f;
+      --muted: #5f5a50;
+      --card: #ffffff;
+      --border: #ded6c8;
+      --accent: #2f5d50;
+      --error: #9f2d20;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 760px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: clamp(30px, 6vw, 54px);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.065);
+    }
+
+    .statement {
+      margin: 0 0 28px;
+      padding-left: 16px;
+      border-left: 4px solid var(--accent);
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 750;
+      color: var(--text);
+    }
+
+    .leader {
+      margin: 0 0 44px;
+      font-size: clamp(2.6rem, 8vw, 5.3rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+    }
+
+    h1 {
+      margin: 0 0 44px;
+      font-size: clamp(2.1rem, 6vw, 4.1rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 850;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 750;
+      cursor: pointer;
+      background: white;
+      color: var(--text);
+      text-align: center;
+      transition:
+        background-color 0.22s ease,
+        border-color 0.22s ease,
+        color 0.22s ease,
+        transform 0.22s ease;
+    }
+
+    .option:hover,
+    .option:has(input:checked) {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .mail-intro {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .email-label {
+      display: block;
+      margin: 4px 0 6px;
+      font-weight: 650;
+      font-size: 0.95rem;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 14px 15px;
+      font: inherit;
+      background: white;
+      color: var(--text);
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47, 93, 80, 0.12);
+    }
+
+    button {
+      margin-top: 12px;
+      border: 0;
+      border-radius: 999px;
+      padding: 16px 20px;
+      font: inherit;
+      font-weight: 800;
+      color: white;
+      background: var(--accent);
+      cursor: pointer;
+      transition:
+        filter 0.22s ease,
+        transform 0.22s ease;
+    }
+
+    button:hover {
+      filter: brightness(0.95);
+      transform: translateY(-1px);
+    }
+
+    .error-message {
+      display: none;
+      color: var(--error);
+      font-size: 0.9rem;
+      font-weight: 650;
+      margin: -10px 0 4px;
+    }
+
+    .error-message.visible {
+      display: block;
+    }
+
+    .hidden-field {
+      display: none;
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding: 18px 12px;
+      }
+
+      .page {
+        padding: 28px 20px;
+        border-radius: 20px;
+      }
+
+      .leader {
+        margin-bottom: 34px;
+      }
+
+      h1 {
+        margin-bottom: 34px;
+      }
+
+      .options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="page">
+
+      <div class="statement">
+        Van bewustwording naar actie.
+      </div>
+
+      <div class="leader">
+        Verzwak het systeem.<br>
+        Versterk elkaar.
+      </div>
+
+      <h1>Koop WakkerWaar</h1>
+
+      <form id="kww-form" action="https://formspree.io/f/mbdegloa" method="POST">
+
+        <div class="options">
+          <label class="option">
+            <input type="checkbox" name="interesse" value="Ik zoek aanbieders">
+            Ik zoek aanbieders
+          </label>
+
+          <label class="option">
+            <input type="checkbox" name="interesse" value="Ik ben aanbieder">
+            Ik ben aanbieder
+          </label>
+        </div>
+
+        <p id="interest-error" class="error-message">
+          Kies minimaal één optie.
+        </p>
+
+        <p class="mail-intro">
+          Laat je mail achter en ontvang de eerste lijst zodra die klaar is.
+        </p>
+
+        <div>
+          <label class="email-label" for="email">E-mailadres</label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="jij@example.nl"
+            maxlength="120"
+            autocomplete="email"
+            required>
+        </div>
+
+        <div class="hidden-field">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <input type="hidden" name="_subject" value="Nieuwe aanmelding via Koop WakkerWaar">
+        <input type="hidden" name="_language" value="nl">
+        <input type="hidden" name="_next" value="https://koopwakkerwaar.nl/thanks.html">
+
+        <button type="submit">
+          Houd mij op de hoogte
+        </button>
+
+      </form>
+
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('kww-form');
+    const checkboxes = document.querySelectorAll('input[name="interesse"]');
+    const error = document.getElementById('interest-error');
+
+    form.addEventListener('submit', function(event) {
+      const hasInterest = Array.from(checkboxes).some(cb => cb.checked);
+
+      if (!hasInterest) {
+        event.preventDefault();
+        error.classList.add('visible');
+      }
+    });
+
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        const hasInterest = Array.from(checkboxes).some(cb => cb.checked);
+
+        if (hasInterest) {
+          error.classList.remove('visible');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
