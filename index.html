@@ -364,17 +364,22 @@
 
       <form id="kww-form" action="https://formspree.io/f/mbdegloa" method="POST">
 
-        <div class="options">
-          <label class="option">
-            <input type="checkbox" name="interesse" value="Ik zoek aanbieders">
-            Ik zoek aanbieders
-          </label>
+<div class="options">
+  <label class="option">
+    <input type="radio" name="interesse" value="Ik zoek aanbieders" required>
+    Ik zoek aanbieders
+  </label>
 
-          <label class="option">
-            <input type="checkbox" name="interesse" value="Ik ben aanbieder">
-            Ik ben aanbieder
-          </label>
-        </div>
+  <label class="option">
+    <input type="radio" name="interesse" value="Ik ben aanbieder" required>
+    Ik ben aanbieder
+  </label>
+
+  <label class="option">
+    <input type="radio" name="interesse" value="Allebei" required>
+    Allebei
+  </label>
+</div>
 
         <p id="interest-error" class="error-message">
           Kies minimaal één optie.
