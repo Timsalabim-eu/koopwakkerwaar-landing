@@ -364,25 +364,20 @@
 
       <form id="kww-form" action="https://formspree.io/f/mbdegloa" method="POST">
 
-<div class="options">
-  <label class="option">
-    <input type="radio" name="interesse" value="Ik zoek aanbieders" required>
-    Ik zoek aanbieders
-  </label>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="interesse" value="Ik zoek aanbieders" required>
+            Ik zoek aanbieders
+          </label>
 
-  <label class="option">
-    <input type="radio" name="interesse" value="Ik ben aanbieder" required>
-    Ik ben aanbieder
-  </label>
-
-  <label class="option">
-    <input type="radio" name="interesse" value="Allebei" required>
-    Allebei
-  </label>
-</div>
+          <label class="option">
+            <input type="radio" name="interesse" value="Ik ben aanbieder" required>
+            Ik ben aanbieder
+          </label>
+        </div>
 
         <p id="interest-error" class="error-message">
-          Kies minimaal één optie.
+          Kies één optie.
         </p>
 
         <p class="mail-intro">
@@ -421,11 +416,11 @@
 
   <script>
     const form = document.getElementById('kww-form');
-    const checkboxes = document.querySelectorAll('input[name="interesse"]');
+    const interestOptions = document.querySelectorAll('input[name="interesse"]');
     const error = document.getElementById('interest-error');
 
     form.addEventListener('submit', function(event) {
-      const hasInterest = Array.from(checkboxes).some(cb => cb.checked);
+      const hasInterest = Array.from(interestOptions).some(option => option.checked);
 
       if (!hasInterest) {
         event.preventDefault();
@@ -433,9 +428,9 @@
       }
     });
 
-    checkboxes.forEach(function(checkbox) {
-      checkbox.addEventListener('change', function() {
-        const hasInterest = Array.from(checkboxes).some(cb => cb.checked);
+    interestOptions.forEach(function(option) {
+      option.addEventListener('change', function() {
+        const hasInterest = Array.from(interestOptions).some(option => option.checked);
 
         if (hasInterest) {
           error.classList.remove('visible');
